@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/nba-trivia/static/css/main.ecffce59.chunk.css",
-    "main.js": "/nba-trivia/static/js/main.6ab22088.chunk.js",
-    "main.js.map": "/nba-trivia/static/js/main.6ab22088.chunk.js.map",
+    "main.js": "/nba-trivia/static/js/main.8bb6e735.chunk.js",
+    "main.js.map": "/nba-trivia/static/js/main.8bb6e735.chunk.js.map",
     "runtime-main.js": "/nba-trivia/static/js/runtime-main.a8d1008f.js",
     "runtime-main.js.map": "/nba-trivia/static/js/runtime-main.a8d1008f.js.map",
     "static/js/2.58896df2.chunk.js": "/nba-trivia/static/js/2.58896df2.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.a8d1008f.js",
     "static/js/2.58896df2.chunk.js",
     "static/css/main.ecffce59.chunk.css",
-    "static/js/main.6ab22088.chunk.js"
+    "static/js/main.8bb6e735.chunk.js"
   ]
 }
