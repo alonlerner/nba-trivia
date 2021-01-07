@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/nba-trivia/static/css/main.4811a926.chunk.css",
+    "main.css": "/nba-trivia/static/css/main.c874263c.chunk.css",
     "main.js": "/nba-trivia/static/js/main.87f1d760.chunk.js",
     "main.js.map": "/nba-trivia/static/js/main.87f1d760.chunk.js.map",
     "runtime-main.js": "/nba-trivia/static/js/runtime-main.a8d1008f.js",
@@ -10,7 +10,7 @@
     "static/js/3.27e6f595.chunk.js": "/nba-trivia/static/js/3.27e6f595.chunk.js",
     "static/js/3.27e6f595.chunk.js.map": "/nba-trivia/static/js/3.27e6f595.chunk.js.map",
     "index.html": "/nba-trivia/index.html",
-    "static/css/main.4811a926.chunk.css.map": "/nba-trivia/static/css/main.4811a926.chunk.css.map",
+    "static/css/main.c874263c.chunk.css.map": "/nba-trivia/static/css/main.c874263c.chunk.css.map",
     "static/js/2.58896df2.chunk.js.LICENSE.txt": "/nba-trivia/static/js/2.58896df2.chunk.js.LICENSE.txt",
     "static/media/heart2.6ca1547b.png": "/nba-trivia/static/media/heart2.6ca1547b.png",
     "static/media/nba3.497d6747.png": "/nba-trivia/static/media/nba3.497d6747.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.a8d1008f.js",
     "static/js/2.58896df2.chunk.js",
-    "static/css/main.4811a926.chunk.css",
+    "static/css/main.c874263c.chunk.css",
     "static/js/main.87f1d760.chunk.js"
   ]
 }
