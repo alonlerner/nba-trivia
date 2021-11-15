@@ -75,7 +75,6 @@ class Game extends React.Component {
             }
             this.setState({ randomAnswers: array })
             this.setState({ Ready: true })
-            console.log(this.state.questions)
         },1000)
     }
 
@@ -91,7 +90,6 @@ class Game extends React.Component {
         setTimeout(() => {
             this.setState({ teams: a })
             setTimeout(() => {
-                console.log(this.state.teams)
                 this.getRecordQuestions()
             },1000)
         },5000)
@@ -108,9 +106,6 @@ class Game extends React.Component {
                 }
             }
         }
-        setTimeout(() => {
-            console.log({ "question": "What team has a better " + a[n].team.record.items[t].description.toLowerCase() + "?", "questionImg": nba, "correctAnswer": a[n + 3].team.displayName, "wrongAnswer1": a[n + 2].team.displayName, "wrongAnswer2": a[n + 1].team.displayName, "wrongAnswer3": a[n].team.displayName })
-        },2000)
         return { "question": "What team has a better " + a[n].team.record.items[t].description.toLowerCase() + "?", "questionImg": nba, "correctAnswer": a[n + 3].team.displayName, "wrongAnswer1": a[n + 2].team.displayName, "wrongAnswer2": a[n + 1].team.displayName, "wrongAnswer3": a[n].team.displayName }
 
     }
@@ -131,7 +126,6 @@ class Game extends React.Component {
             }
         }
         setTimeout(() => {
-            console.log(aq)
             this.setState({ recordQuestions: aq })
         },1000)
         
@@ -201,7 +195,6 @@ class Game extends React.Component {
                     a2.push(this.getStatsQuestionsHelp2(a[i],j,i))
                 }
             }
-            console.log(a2)
             this.setState({ StatsQuestions: a2 })
         }, 11000)
 
@@ -227,7 +220,6 @@ class Game extends React.Component {
                 })
         }
         setTimeout(() => {
-            console.log(a)
             this.setState({ topPlayers: a })
             setTimeout(() => {
                 this.getPictureQuestions()
@@ -251,9 +243,7 @@ class Game extends React.Component {
             a.push({ "question": "Name the player.", "questionImg": this.state.topPlayers[i].athlete.headshot.href, "correctAnswer": this.state.topPlayers[i].athlete.displayName, "wrongAnswer1": this.state.topPlayers[wrong1].athlete.displayName, "wrongAnswer2": this.state.topPlayers[wrong2].athlete.displayName, "wrongAnswer3": this.state.topPlayers[wrong3].athlete.displayName })
         }
         setTimeout(() => {
-            console.log(a)
             this.setState({ pictureQuestions: a })
-            
         },5000)
     }
 
@@ -275,7 +265,6 @@ class Game extends React.Component {
             
         }
         setTimeout(() => {
-            console.log(a)
             this.setState({ collegeQuestions: a })
             setTimeout(() => {
                 this.getQuestions()
@@ -356,7 +345,6 @@ class Game extends React.Component {
                     }
                 })
                 .then(() => {
-                    console.log(a)
                     this.setState({ data: a })
                     setTimeout(() => {
                         for (i = 0; i < a.length; i++) {
