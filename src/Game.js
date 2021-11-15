@@ -158,7 +158,7 @@ class Game extends React.Component {
     getStatsQuestionsHelp2(a, j, i) {
         var k, leader1 = { "name": "", "data": 0 }, leader2 = { "name": "", "data": 0 }, leader3 = { "name": "", "data": 0 }, leader4 = { "name": "", "data": 0 }
         for (k = 1; k < a.length; k++) {
-            if (a[k].athlete.statsSummary.displayName === "2020-21 season stats") {
+            if (a[k].athlete.statsSummary.displayName === "2021-22 season stats") {
                 if (a[k].athlete.statsSummary.statistics[j].value >= leader1.data) {
                     leader4 = { "name": leader3.name, "data": leader3.data }
                     leader3 = { "name": leader2.name, "data": leader2.data }
