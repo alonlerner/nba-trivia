@@ -556,7 +556,7 @@ class Game extends React.Component {
         return (
             <div className="game">
                 <div style={{ display: this.state.gameStarted ? "none" : "block", marginTop: "7vh" }}>
-                    <img src={nba} height="88vh" /><h1 className="headline-njit" >NBA</h1>
+                    <img src={nba} height="88vh" alt="logo" /><h1 className="headline-njit" >NBA</h1>
                     {/*<h1 className="headline-snd" >Statistics</h1>*/}
                     <h1 className="headline" >Trivia Game</h1>
                     <input className="name-input" type="text" minLength="1" maxLength="10" placeholder="Enter your name" value={this.state.name} onChange={this.handleNameChange} onSubmit={this.handleStart} onKeyPress={this.enterPressed.bind(this)} style={{ width: 200, margin: "1rem auto", fontWeight: "bold" }} />
@@ -578,7 +578,7 @@ class Game extends React.Component {
                         </tr>
                     </table>
                     <br style={{ display: this.state.questions && this.state.time > -10 ? "block" : "none" }} />
-                    <div className="question" style={{ display: this.state.questions && this.state.time > -10 ? "block" : "none" }}><img src={this.state.questions && this.state.questions[this.state.currentQuestionId].questionImg} height="120vh" /><br height="10vh" />{this.state.questions && this.state.questions[this.state.currentQuestionId].question}</div>                    <div className="div-answer" onClick={this.state.notClicked && this.state.time > 0 && this.handleClick} style={{ display: this.state.questions && this.state.time > -10 ? "block" : "none", backgroundColor: this.state.time === 100 && '' }}>{this.state.questions && this.state.randomAnswers[0]}</div>
+                    <div className="question" style={{ display: this.state.questions && this.state.time > -10 ? "block" : "none" }}><img src={this.state.questions && this.state.questions[this.state.currentQuestionId].questionImg} height="120vh" alt="logo" /><br height="10vh" />{this.state.questions && this.state.questions[this.state.currentQuestionId].question}</div>                    <div className="div-answer" onClick={this.state.notClicked && this.state.time > 0 && this.handleClick} style={{ display: this.state.questions && this.state.time > -10 ? "block" : "none", backgroundColor: this.state.time === 100 && '' }}>{this.state.questions && this.state.randomAnswers[0]}</div>
                     <div className="div-answer" onClick={this.state.notClicked && this.state.time > 0 && this.handleClick} style={{ display: this.state.questions && this.state.time > -10 ? "block" : "none", backgroundColor: this.state.time === 100 && '' }}>{this.state.questions && this.state.randomAnswers[1]}</div>
                     <div className="div-answer" onClick={this.state.notClicked && this.state.time > 0 && this.handleClick} style={{ display: this.state.questions && this.state.time > -10 ? "block" : "none", backgroundColor: this.state.time === 100 && '' }}>{this.state.questions && this.state.randomAnswers[2]}</div>
                     <div className="div-answer" onClick={this.state.notClicked && this.state.time > 0 && this.handleClick} style={{ display: this.state.questions && this.state.time > -10 ? "block" : "none", backgroundColor: this.state.time === 100 && '' }}>{this.state.questions && this.state.randomAnswers[3]}</div>
