@@ -112,6 +112,7 @@ class Game extends React.Component {
 
     getRecordQuestions() {
         var a = this.state.teams, i, j, aq=[]
+        console.log(a)
         for (i = 0; i < 3; i++) {
             var ctr = a.length, temp, index
             while (ctr > 0) {
@@ -158,7 +159,7 @@ class Game extends React.Component {
     getStatsQuestionsHelp2(a, j, i) {
         var k, leader1 = { "name": "", "data": 0 }, leader2 = { "name": "", "data": 0 }, leader3 = { "name": "", "data": 0 }, leader4 = { "name": "", "data": 0 }
         for (k = 1; k < a.length; k++) {
-            if (a[k].athlete.statsSummary.displayName === "2021-22 season stats") {
+            if (a[k].athlete.statsSummary && a[k].athlete.statsSummary.displayName === "2022-23 season stats") {
                 if (a[k].athlete.statsSummary.statistics[j].value >= leader1.data) {
                     leader4 = { "name": leader3.name, "data": leader3.data }
                     leader3 = { "name": leader2.name, "data": leader2.data }
@@ -186,7 +187,6 @@ class Game extends React.Component {
     getStatsQuestions() {
         var i, j, a = [],a2=[]
         for (i = 1; i < 31; i++) {
-
             a.push(this.getStatsQuestionsHelp(i))
         }
         setTimeout(() => {
@@ -211,7 +211,7 @@ class Game extends React.Component {
                             fetch('https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/' + result.athletes[j].id)
                                 .then(response => response.json())
                                 .then(response => {
-                                    if (response.athlete.statsSummary.statistics[0].value >= 15 || response.athlete.statsSummary.statistics[1].value >= 10 || response.athlete.statsSummary.statistics[2].value >= 6)
+                                    if (response.athlete.statsSummary && (response.athlete.statsSummary.statistics[0].value >= 15 || response.athlete.statsSummary.statistics[1].value >= 10 || response.athlete.statsSummary.statistics[2].value >= 6))
                                         a.push(response)
 
                                 })
@@ -488,21 +488,21 @@ class Game extends React.Component {
 
     handleEndGame() {
         this.setState({ gameOver: true})
-        fetch('https://tlmy7kec05.execute-api.us-east-2.amazonaws.com/Prod/nbaleaderboard')
-            .then(response => response.json())
-            .then(response => {
-                if (response.length > 9 && response[9].score > this.state.totalScore)
-                    this.setState({ leaderboard: response })
-                else {
-                    fetch(`https://tlmy7kec05.execute-api.us-east-2.amazonaws.com/Prod/addnbascore?name=${this.state.name.toUpperCase().trim()}&score=${this.state.totalScore}`)
-                    setTimeout(() => {
-                        fetch('https://tlmy7kec05.execute-api.us-east-2.amazonaws.com/Prod/nbaleaderboard')
-                            .then(response => response.json())
-                            .then(response => this.setState({ leaderboard: response }))
-                        fetch('https://tlmy7kec05.execute-api.us-east-2.amazonaws.com/Prod/deletenbascore')
-                    },1000)
-                }
-            })
+        // fetch('https://tlmy7kec05.execute-api.us-east-2.amazonaws.com/Prod/nbaleaderboard')
+        //     .then(response => response.json())
+        //     .then(response => {
+        //         if (response.length > 9 && response[9].score > this.state.totalScore)
+        //             this.setState({ leaderboard: response })
+        //         else {
+        //             fetch(`https://tlmy7kec05.execute-api.us-east-2.amazonaws.com/Prod/addnbascore?name=${this.state.name.toUpperCase().trim()}&score=${this.state.totalScore}`)
+        //             setTimeout(() => {
+        //                 fetch('https://tlmy7kec05.execute-api.us-east-2.amazonaws.com/Prod/nbaleaderboard')
+        //                     .then(response => response.json())
+        //                     .then(response => this.setState({ leaderboard: response }))
+        //                 fetch('https://tlmy7kec05.execute-api.us-east-2.amazonaws.com/Prod/deletenbascore')
+        //             },1000)
+        //         }
+        //     })
     }
 
     
@@ -585,7 +585,7 @@ class Game extends React.Component {
                 </div>
                 <div style={{ display: this.state.gameOver && this.state.gameStarted ? "block" : "none" }}>
                     <h1 className="final-score" style={{ display: this.state.gameOver ? "block" : "none" }}>Final Score: {this.state.totalScore}</h1>
-                    <h1 className="leaderboard-headline">Top 10 leaderboard</h1>
+                    {/* <h1 className="leaderboard-headline">Top 10 leaderboard</h1>
                     <table className="leaderboard-table" style={{ display: this.state.leaderboard ? "block" : "none", backgroundColor: "#e6e6e6", width: "19rem", margin: "1rem auto", border: "1px solid black", borderRadius: 25, padding: "1rem" }}>
                         <tr>
                             <td style={{ width: "2rem" }}>#</td>
@@ -642,7 +642,7 @@ class Game extends React.Component {
                             <td style={{ color: this.state.leaderboard.length > 9 && this.state.name.toUpperCase().trim() === this.state.leaderboard[9].name.toUpperCase().trim() && "red", fontWeight: this.state.leaderboard.length > 9 && this.state.name.toUpperCase().trim() === this.state.leaderboard[9].name.toUpperCase().trim() && this.state.leaderboard[9].score === this.state.totalScore && "bold", width: "10rem" }}>{this.state.leaderboard.length > 9 && this.state.leaderboard[9].name}</td>
                             <td style={{ color: this.state.leaderboard.length > 9 && this.state.name.toUpperCase().trim() === this.state.leaderboard[9].name.toUpperCase().trim() && "red", fontWeight: this.state.leaderboard.length > 9 && this.state.name.toUpperCase().trim() === this.state.leaderboard[9].name.toUpperCase().trim() && this.state.leaderboard[9].score === this.state.totalScore && "bold", width: "5rem" }}>{this.state.leaderboard.length > 9 && this.state.leaderboard[9].score}</td>
                         </tr>
-                    </table>
+                    </table> */}
                     <div className="start-button" onClick={this.handleNewGame}>play agian!</div>
                 </div>
             </div>
